@@ -37,7 +37,15 @@
           }
         }
       ],
-      "expo-web-browser"
+      "expo-web-browser",
+      [
+        "@sentry/react-native/expo",
+        {
+          "url": "https://sentry.io/",
+          "project": "grocify",
+          "organization": "viet-nam-q3"
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true,

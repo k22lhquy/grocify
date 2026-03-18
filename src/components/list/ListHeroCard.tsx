@@ -1,12 +1,8 @@
 import { useGroceryStore } from "@/store/grocery-store";
-import { useEffect } from "react";
 import { Text, View } from "react-native";
 
 const ListHeroCard = () => {
-  const { items, loadItems } = useGroceryStore();
-  useEffect(() => {
-    loadItems();
-  }, items);
+  const { items } = useGroceryStore();
   const completedCount = items.filter((item) => item.purchased).length;
   const pendingCount = items.length - completedCount;
   const completionRate = items.length ? Math.round((completedCount / items.length) * 100) : 0;

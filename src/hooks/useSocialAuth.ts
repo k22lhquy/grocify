@@ -18,7 +18,7 @@ const useSocialAuth = () => {
         try {
             const { createdSessionId, setActive } = await startSSOFlow({
                 strategy,
-                redirectUrl: Linking.createURL("/(auth)/sign-in"),
+                redirectUrl: Linking.createURL("/sso-callback"),
             });
 
             if (!createdSessionId || !setActive) {
