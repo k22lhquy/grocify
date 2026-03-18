@@ -1,9 +1,14 @@
+import { useGroceryStore } from '@/store/grocery-store'
 import { Show, useClerk, useUser } from '@clerk/expo'
 import { Pressable, StyleSheet, Text, View } from 'react-native'
 
 export default function Page() {
   const { user } = useUser()
   const { signOut } = useClerk()
+
+  const { posts, isLoading } = useGroceryStore()
+  console.log(posts)
+
 
   return (
     <View style={styles.container} className="bg-background text-muted-foreground">
